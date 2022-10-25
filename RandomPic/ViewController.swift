@@ -65,7 +65,7 @@ class ViewController: UIViewController {
             imageView.widthAnchor.constraint(equalToConstant: 300),
             imageView.heightAnchor.constraint(equalToConstant: 300),
 
-            button.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 26),
+            button.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 24),
             button.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24),
             button.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -24),
             button.heightAnchor.constraint(equalToConstant: 40)
