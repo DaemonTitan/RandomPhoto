@@ -19,9 +19,16 @@ class ViewController: UIViewController {
 
     private let button: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .white
-        button.setTitle("Random Photo", for: .normal)
-        button.setTitleColor(.black, for: .normal)
+        button.configuration = .tinted()
+        button.configuration?.title = "Get Random Photo"
+        button.configuration?.subtitle = "Photo from webpage"
+        button.configuration?.baseForegroundColor = .white
+        button.configuration?.baseBackgroundColor = .white
+        button.configuration?.image = UIImage(systemName: "photo.fill")
+        button.configuration?.imagePadding = 8.0
+        //button.backgroundColor = .white
+        //button.setTitle("Random Photo", for: .normal)
+        //button.setTitleColor(.white, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     } ()
@@ -66,9 +73,9 @@ class ViewController: UIViewController {
             imageView.heightAnchor.constraint(equalToConstant: 300),
 
             button.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 24),
-            button.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24),
-            button.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -24),
-            button.heightAnchor.constraint(equalToConstant: 40)
+            button.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 30),
+            button.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -30),
+            button.heightAnchor.constraint(equalToConstant: 55)
         ])
         imageView.center = view.center
         
