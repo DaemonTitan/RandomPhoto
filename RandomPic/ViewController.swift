@@ -42,6 +42,14 @@ class ViewController: UIViewController {
         return label
     } ()
     
+    lazy var gradient: CAGradientLayer = {
+        let gradient = CAGradientLayer()
+        gradient.type = .axial
+        gradient.colors = colors
+        gradient.locations = [0, 0.25, 1]
+        return gradient
+    }()
+    
     let colors: [UIColor] = [
         .systemPink,
         .systemRed,
@@ -53,7 +61,11 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemPink
+        //view.backgroundColor = .systemPink
+        
+        gradient.frame = view.bounds
+        view.layer.addSublayer(gradient)
+        
         view.addSubview(imageView)
         view.addSubview(button)
         view.addSubview(label)
@@ -90,6 +102,8 @@ class ViewController: UIViewController {
         view.backgroundColor = colors.randomElement()
     }
     
+    
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
@@ -107,4 +121,3 @@ class ViewController: UIViewController {
 
 
 }
-
